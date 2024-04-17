@@ -1,6 +1,5 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
+import 'package:news_app/components/navigationBar.dart';
 import 'package:news_app/pages/homepage/widgets/newsTile.dart';
 import 'package:news_app/pages/homepage/widgets/trendingCart.dart';
 
@@ -16,6 +15,7 @@ class HomePage extends StatelessWidget {
           style: Theme.of(context).textTheme.headlineLarge,
         ),
       ),
+      floatingActionButton: MyBottomNavBar(),
       body: Padding(
         padding: const EdgeInsets.all(10),
         child: SingleChildScrollView(

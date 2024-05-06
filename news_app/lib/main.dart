@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:news_app/config/theme.dart';
-import 'package:news_app/pages/homepage/homePage.dart';
+import 'package:news_app/homePageController.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(MyApp());
 }
 
 class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+  MyApp({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -18,7 +18,7 @@ class MyApp extends StatelessWidget {
       theme: lightTheme,
       themeMode: ThemeMode.system,
       darkTheme: darkTheme,
-      home: HomePage(),
+      home: HomePageController(),
     );
   }
 }

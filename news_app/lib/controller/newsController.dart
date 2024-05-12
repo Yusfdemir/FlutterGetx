@@ -102,7 +102,7 @@ class NewsController extends GetxController {
   Future<void> getTeslaNews() async {
     isTeslaNewsLoading(true);
     var baseUrl =
-        "https://newsapi.org/v2/everything?q=tesla&from=2024-04-05&sortBy=publishedAt&apiKey=60e8972b53f245199e0301ad533afd5d";
+        "https://newsapi.org/v2/everything?q=tesla&from=2024-04-05&sortBy=popularity&apiKey=60e8972b53f245199e0301ad533afd5d";
     try {
       var response = await http.get(Uri.parse(baseUrl));
       if (response.statusCode == 200) {

@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:news_app/components/newsTileLoading.dart';
+import 'package:news_app/components/trendingCardLoading.dart';
 import 'package:news_app/controller/newsController.dart';
 import 'package:news_app/pages/homepage/widgets/newsTile.dart';
 import 'package:news_app/pages/homepage/widgets/trendingCart.dart';
@@ -79,7 +81,12 @@ class HomePage extends StatelessWidget {
                 SingleChildScrollView(
                   scrollDirection: Axis.horizontal,
                   child: newsController.isTrendingLoading.value
-                      ? const CircularProgressIndicator()
+                      ? const Row(
+                          children: [
+                            TrendingCardLoading(),
+                            TrendingCardLoading()
+                          ],
+                        )
                       : Row(
                           children: newsController.trendingNews
                               .map((news) => TrendingCard(
@@ -117,7 +124,13 @@ class HomePage extends StatelessWidget {
                   height: 20,
                 ),
                 newsController.isNewsForYouLoading.value
-                    ? const CircularProgressIndicator()
+                    ? Column(
+                        children: [
+                          NewsTileLoading(),
+                          NewsTileLoading(),
+                          NewsTileLoading(),
+                        ],
+                      )
                     : Column(
                         children: newsController.newsForYou5
                             .map(
@@ -154,7 +167,13 @@ class HomePage extends StatelessWidget {
                   height: 20,
                 ),
                 newsController.isAppleNewsLoading.value
-                    ? const CircularProgressIndicator()
+                    ? const Column(
+                        children: [
+                          NewsTileLoading(),
+                          NewsTileLoading(),
+                          NewsTileLoading(),
+                        ],
+                      )
                     : Column(
                         children: newsController.apple5News
                             .map(
@@ -191,7 +210,13 @@ class HomePage extends StatelessWidget {
                   height: 20,
                 ),
                 newsController.isTeslaNewsLoading.value
-                    ? const CircularProgressIndicator()
+                    ? const Column(
+                        children: [
+                          NewsTileLoading(),
+                          NewsTileLoading(),
+                          NewsTileLoading(),
+                        ],
+                      )
                     : Column(
                         children: newsController.tesla5News
                             .map(
@@ -228,7 +253,13 @@ class HomePage extends StatelessWidget {
                   height: 20,
                 ),
                 newsController.isBusinessNewsLoading.value
-                    ? const CircularProgressIndicator()
+                    ? const Column(
+                        children: [
+                          NewsTileLoading(),
+                          NewsTileLoading(),
+                          NewsTileLoading(),
+                        ],
+                      )
                     : Column(
                         children: newsController.business5News
                             .map(
